@@ -1,0 +1,63 @@
+.boton3 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    color: #3469b7;
+    background: #fcfcfc;
+    white-space: nowrap;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all .8s;
+    justify-content: center;
+    border: 1px solid #3469b7;
+    width: auto;
+    padding: 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.boton3Desactivado {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    color: #65676b;
+    background: #fcfcfc;
+    white-space: nowrap;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all .8s;
+    justify-content: center;
+    border: 1px solid #707174;
+    width: auto;
+    padding: 10px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.boton3:hover {
+    color: #fcfcfc;
+    background: #3469b7;
+    border-color: #3469b7;
+}
+
+.boton3:active {
+    background: #20467e;
+    border-color: #20467e;
+}
+
+.boton3 i {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.boton3Desactivado i {
+    margin-right: 10px;
+    margin-left: 10px;
+}

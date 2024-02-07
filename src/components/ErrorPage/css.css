@@ -1,0 +1,11 @@
+.error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .error-image {
+    width: 500px;
+    height: auto;
+  }
