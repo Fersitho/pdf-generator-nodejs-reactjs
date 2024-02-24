@@ -1,6 +1,18 @@
 import puppeteer from "puppeteer";
 
-export default async function generatePdf({ url }) {
+export async function generatePdfFromUrl(url) {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto(url, { waitUntil: "networkidle0" });
+  const pdfBuffer = await page.pdf({ format: "A4" }); // No se especifica la ruta, el PDF se generará en memoria
+  await browser.close();
+  console.log(`PDF generado desde la URL: ${url}`);
+  
+  return pdfBuffer; // Devolver el buffer del PDF generado
+}
+
+
+const generatePdf = async ({ url }) => {
   const browser = await puppeteer.launch({
     headless: true,
     defaultViewport: {
@@ -20,7 +32,8 @@ export default async function generatePdf({ url }) {
 
   await page.emulateMediaType("screen");
 
-  const pdf = page.pdf({
+  // Esperar la generación del PDF y devolverlo
+  const pdf = await page.pdf({
     format: "A4",
     printBackground: true,
     margin: { left: "0.5cm", top: "2cm", right: "0.5cm", bottom: "2cm" },
@@ -28,4 +41,6 @@ export default async function generatePdf({ url }) {
 
   await browser.close();
   return pdf;
-}
+};
+
+export default generatePdf;
